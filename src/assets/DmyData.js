@@ -1,0 +1,92 @@
+export const TopUsers = [
+  {
+    name: "John Doe",
+    country: "United States",
+    usageTime: 54,
+    usageTimeUnit: "hours",
+  },
+  {
+    name: "Prachi Dey",
+    country: "India",
+    usageTime: 45,
+    usageTimeUnit: "hours",
+  },
+  {
+    name: "Ranjan Kumar",
+    country: "India",
+    usageTime: 78,
+    usageTimeUnit: "hours",
+  },
+  {
+    name: "Rakesh Kumar",
+    country: "",
+    usageTime: 0,
+    usageTimeUnit: "hours",
+  },
+  {
+    name: "Smith cavin",
+    country: "United States",
+    usageTime: 0,
+    usageTimeUnit: "hours",
+  },
+  {
+    name: "Williams joy",
+    country: "france",
+    usageTime: 19,
+    usageTimeUnit: "hours",
+  },
+  {
+    name: "Michael Phelps",
+    country: "Ghana",
+    usageTime: 76,
+    usageTimeUnit: "hours",
+  },
+  {
+    name: "Rajini Kanth",
+    country: "Bangladesh",
+    usageTime: 46,
+    usageTimeUnit: "hours",
+  },
+  {
+    name: "Susan joyal",
+    country: "chili",
+    usageTime: 48,
+    usageTimeUnit: "hours",
+  },
+  {
+    name: "Elizabeth willson",
+    country: "united kingdom",
+    usageTime: 37,
+    usageTimeUnit: "hours",
+  },
+  {
+    name: "Richard willson",
+    country: " united kingdom",
+    usageTime: 40,
+    usageTimeUnit: "hours",
+  },
+  {
+    name: "Aditya Roy",
+    country: "India",
+    usageTime: 50,
+    usageTimeUnit: "hours",
+  },
+  {
+    name: "Prachi Dey",
+    country: "India",
+    usageTime: 27,
+    usageTimeUnit: "hours",
+  },
+  {
+    name: "Rakesh Ranjan",
+    country: "India",
+    usageTime: 30,
+    usageTimeUnit: "hours",
+  },
+  {
+    name: "Mustak Ali",
+    country: "Pakistan",
+    usageTime: 70,
+    usageTimeUnit: "hours",
+  },
+];
