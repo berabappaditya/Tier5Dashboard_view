@@ -131,17 +131,20 @@ export function MAUChart() {
   const handleClick = async () => {
     try {
       const uniqueId = localStorage.getItem("userName");
-      const res = await fetch("http://localhost:8080/user/dashboardUpdate", {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          uniqueId,
-          label: "usagechart",
-          value: false,
-        }),
-      });
+      const res = await fetch(
+        "https://tier5dashboard.herokuapp.com/user/dashboardUpdate",
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            uniqueId,
+            label: "usagechart",
+            value: false,
+          }),
+        }
+      );
       const data = await res.json();
       console.log(data);
       dispatch(setDashboard({ dashboard: data.dashboard }));
