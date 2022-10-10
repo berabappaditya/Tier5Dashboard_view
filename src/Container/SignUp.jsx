@@ -10,6 +10,8 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confimPassword, setConfirmPassword] = useState("");
+    const [errorMsg, setErrorMsg] = useState(false);
+    const [errorText, setErrorText] = useState("");                    
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -35,6 +37,8 @@ function SignUp() {
       alert("User Created Successfully");
       navigate("/dashboard");
     } catch (err) {
+      setErrorMsg(true)
+      setErrorText(err.message);
       console.log(err);
     }
   };
@@ -97,6 +101,23 @@ function SignUp() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
               <br />
+                <div className="ab_center">
+            <div
+              className="error-message"
+              style={{
+                height: "20px",
+                margin: "-15px 0 10px 0",
+                width: "210px",
+                textAlign: "left",
+              }}
+            >
+              {errorMsg && (
+                <p style={{ color: "red", height: "10px", fontSize: "10px" }}>
+                  {errorText}
+                </p>
+              )}
+            </div>
+          </div>
               <div style={{textAlign:"left",padding:"10px 0 0 1vh"}}><SubmitButton name="submit" onClick={handleSunmit} /></div>
               
               </div>

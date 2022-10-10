@@ -7,3 +7,11 @@ h4:hover {
   cursor: pointer;
   color: rgba(85, 85, 85, 0.897);
 }
+/* body {
+  background-color: #000000;
+} */
+
+.color_picker {
+  color: #000;
+  background-color: #eeeeee31;
+}

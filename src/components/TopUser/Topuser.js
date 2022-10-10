@@ -9,7 +9,7 @@ import "./TopUser.css";
 function Topuser() {
   const dispatch = useDispatch();
 
-  const handleClick = async (e) => {
+  const handleTileClose = async (e) => {
     e.preventDefault();
     try {
       const uniqueId = localStorage.getItem("userName");
@@ -43,6 +43,8 @@ function Topuser() {
           flexDirection: "column",
           height: 370,
           width: "93%",
+          // backgroundColor: "#eeeeee31",
+          // color: "white",
         }}
       >
         <div
@@ -52,7 +54,7 @@ function Topuser() {
             height: "10%",
           }}
         >
-          <span onClick={handleClick}>
+          <span onClick={handleTileClose}>
             <CloseIcon height={"15px"} width={"15px"} color={"black"} />
           </span>
         </div>

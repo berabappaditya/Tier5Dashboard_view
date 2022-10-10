@@ -3,6 +3,8 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
 import { Grid, MenuItem, Paper, Select } from "@mui/material";
 import { CloseIcon } from "../../assets/Icons";
+import { setDashboard } from "../../app/userSlice";
+import { useDispatch } from "react-redux";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -61,11 +63,41 @@ export const genderData = {
     },
   ],
 };
+
+//Pie chart compponent
+
 const CountryPie = () => {
   const [contrain, setContrain] = useState("country");
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setContrain(e.target.value);
+  };
+
+  const handleTileClose = async (e) => {
+    e.preventDefault();
+    try {
+      const uniqueId = localStorage.getItem("userName");
+      const res = await fetch(
+        "https://tier5dashboard.herokuapp.com/user/dashboardUpdate",
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            uniqueId,
+            label: "usagePie",
+            value: false,
+          }),
+        }
+      );
+      const data = await res.json();
+      console.log("iam from top user", data);
+      dispatch(setDashboard({ dashboard: data.dashboard }));
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
@@ -76,6 +108,8 @@ const CountryPie = () => {
           flexDirection: "column",
           height: 370,
           width: "70%",
+          // backgroundColor: "#eeeeee31",
+          // color: "white",
         }}
       >
         <div
@@ -96,7 +130,7 @@ const CountryPie = () => {
             <MenuItem value={"gender"}>Gender</MenuItem>
             <MenuItem value={"device"}>Device</MenuItem>
           </Select>
-          <span>
+          <span onClick={handleTileClose}>
             <CloseIcon height={"15px"} width={"15px"} color={"black"} />
           </span>
         </div>
